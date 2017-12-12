@@ -1,8 +1,8 @@
 v0.2
 	- Completed:
+		- Add header image / links
 	- TODO: 
 		- Style components.
-		- Add header image / links
 		- Add base sub components for:
 			+ Map
 			+ Search
