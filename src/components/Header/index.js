@@ -7,7 +7,7 @@ export default class Header extends Component {
   
   render() {
     return (
-      <section id="header" className="col-md-12 col-sm-12">
+      <header className="col-md-12 col-sm-12">
       	<div className="col-md-3 col-sm-12 header-title">
       		<Link to={'/'}>UdaciMap</Link>
       	</div>
@@ -17,7 +17,7 @@ export default class Header extends Component {
       		<a href="#github">About</a>
       	</div>
 
-      </section>
+      </header>
     );
   }
 }
