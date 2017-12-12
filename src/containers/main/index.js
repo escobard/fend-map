@@ -6,7 +6,7 @@ export default class Main extends Component {
   
   render() {
     return (
-      <main className="container col-md-12 col-sm-12">
+      <main id="home" className="container">
         <p>This is where the bulk of the application will reside</p>
       </main>
     );
