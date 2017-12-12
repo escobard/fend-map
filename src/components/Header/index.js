@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import styles from './styles.scss'
+
 export default class Header extends Component {
   
   render() {
@@ -9,7 +11,7 @@ export default class Header extends Component {
       		<img src="" alt=""/>
       	</div>
       	<div className="col-md-9 col-sm-12 header-links">
-      		
+      		<a href="">About</a>
       	</div>
       </section>
     );

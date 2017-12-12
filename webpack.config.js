@@ -20,7 +20,7 @@ module.exports = {
       }, 
       {
         test: /\.scss$/,
-        loaders: ExtractTextPlugin.extract('css!sass')
+        loader: ExtractTextPlugin.extract('css!sass')
       }      
     ]
   },
@@ -32,7 +32,7 @@ module.exports = {
     contentBase: './'
   },
   plugins: [
-        new ExtractTextPlugin('src/style.css', {
+        new ExtractTextPlugin('public/style.css', {
             allChunks: true
         })
   ]
