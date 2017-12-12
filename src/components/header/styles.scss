@@ -1,9 +1,12 @@
 #header{
-	background: #000;
+	display: inline-block;
+	border-bottom: solid 1px;
+	padding: 1rem;
 	.header-image{
 		float: left;
 	}
 	.header-links{
 		float: right;
+		text-align: right;
 	}
 }
