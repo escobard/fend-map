@@ -1,3 +1,9 @@
+v0.3: 
+	- Completed:
+		- Added react-router-dom and routes for both views.
+	- TODO:
+		- Add base components for search, map, and link for views.
+
 v0.2
 	- Completed:
 		- Add header image / links

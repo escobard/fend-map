@@ -3,6 +3,9 @@
   border-bottom: solid 1px;
   padding: 1rem;
   background: #02b3e4;
+  	a{
+  		color:#fff;
+  	}
 	.header-title{
 	    float: left;
 	    font-size: 40px;
@@ -16,6 +19,7 @@
 	    font-size: 20px;
 	   	a{
 	    	color: #fff;
+	    	margin: 1rem;
 	    }
 	}
 }
