@@ -15,7 +15,3 @@ To install and run this project locally, you can utilize the following commands:
 2) Navigate to the project folder with your shell application.
 3) Type `npm install && npm start`
 ```
-
-## Licensing
-
-MIT 2017
