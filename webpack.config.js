@@ -24,16 +24,16 @@ module.exports = {
       }      
     ]
   },
+  plugins: [
+        new ExtractTextPlugin('public/style.css', {
+            allChunks: true
+        })
+  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
   devServer: {
     historyApiFallback: true,
     contentBase: './'
-  },
-  plugins: [
-        new ExtractTextPlugin('public/style.css', {
-            allChunks: true
-        })
-  ]
+  }
 };
