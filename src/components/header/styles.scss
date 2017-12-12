@@ -1,12 +1,21 @@
 #header{
-	display: inline-block;
-	border-bottom: solid 1px;
-	padding: 1rem;
-	.header-image{
-		float: left;
+  display: inline-block;
+  border-bottom: solid 1px;
+  padding: 1rem;
+  background: #02b3e4;
+	.header-title{
+	    float: left;
+	    font-size: 40px;
+	    color: #fff;
+
 	}
 	.header-links{
-		float: right;
-		text-align: right;
+	    float: right;
+	    text-align: right;
+	    margin-top: 1rem;
+	    font-size: 20px;
+	   	a{
+	    	color: #fff;
+	    }
 	}
 }
