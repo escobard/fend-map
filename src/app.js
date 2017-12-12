@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Route} from "react-router-dom";
 
 import Main from './containers/main'
 import Listing from './containers/listing'
@@ -11,8 +12,8 @@ export default class App extends Component {
     return (
     	<div>
 	    	<Header />
-		    	<Main />
-		    	<Listing />
+	    		<Route exact path="/" component={Main}/>
+	    		<Route exact path="/listing" component={Listing}/>
 	    	<Footer />
 	    </div>
     )
