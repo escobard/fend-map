@@ -1,8 +1,6 @@
 v0.4: 
 	- TODO:
-		- Add react-redux.
-		- Add mock data for map pins.
-		- Add handlers to add data, fire search filter.
+		- Add the map plugin
 v0.3: 
 	- Completed:
 		- Added react-router-dom and routes for both views.
