@@ -1,3 +1,8 @@
+v0.5:
+	TODO:
+		- set up redux reducers and actionss
+		- set up input and handlers for new markers
+
 v0.4: 
 	- Completed:
 		- Add a functional map.
