@@ -1,8 +1,14 @@
+v0.5:
+	TODO:
+		- set up redux reducers and actionss
+		- set up input and handlers for new markers
+
 v0.4: 
+	- Completed:
+		- Add a functional map.
+		- Add a map pin.
 	- TODO:
-		- Add react-redux.
-		- Add mock data for map pins.
-		- Add handlers to add data, fire search filter.
+		- Add infoboxes to map pins.
 v0.3: 
 	- Completed:
 		- Added react-router-dom and routes for both views.
