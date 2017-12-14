@@ -9,13 +9,14 @@ class Map extends Component {
   	this.state={
     	markers:[]
     }
+
+    this.placeMarker = this.placeMarker.bind(this);
   }
 
   componentDidMount () {
     this.map();
     this.map = this.map.bind(this);
-    this.placeMarker = this.placeMarker.bind(this);
-    this.renderLabel = this.renderLabel.bind(this);
+
   }
 
   map() {

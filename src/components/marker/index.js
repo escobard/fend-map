@@ -6,19 +6,43 @@ import {addLabel} from '../../actions'
 
 import styles from './styles.scss'
 
-export default class Marker extends Component {
+class Marker extends Component {
   
+  constructor(props){
+    super(props);
+
+    this.state = { markerLabel: '' }
+
+    this.inputChange = this.inputChange.bind(this)
+    this.submitLabel = this.submitLabel.bind(this)
+
+  }
+
+  submitLabel(){
+    console.log('submitted', 'state:', this.state)
+  }
+
+  inputChange(event){
+    this.setState({markerLabel: event.target.value})
+  }
   render() {
     return (
       <div id="marker-label">
-        <form>
+        <form onSubmit={this.submitLabel} className="input-group">
           <label htmlFor="new-marker">
-            <input name="new-marker" type="text"/>
+            <input
+             placeholder="Enter your marker label"
+             value={this.state.markerLabel}
+             onChange={this.inputChange}
+             className="form-control"
+             name="new-marker" 
+             type="text"/>
           </label>
+          <button type="submit">Submit</button>
         </form>
       </div>
     );
   }
 }
 
-connect(null, {})(Marker)
+export default connect(null, {})(Marker)
