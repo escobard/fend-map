@@ -4,8 +4,10 @@ import styles from './styles.scss'
 
 class Map extends Component {
   componentDidMount () {
+    this.state={
+    	markers:[]
+    }
     this.map();
-
     this.map = this.map.bind(this);
     this.placeMarker = this.placeMarker.bind(this);
   }
@@ -14,10 +16,10 @@ class Map extends Component {
   	let placeMarker = this.placeMarker
     let map = new window.google.maps.Map(document.getElementById('map'), {
       center: {
-        lat: parseFloat(51.507351),
-        lng: parseFloat(-0.127758)
+        lat: 37.8044843,
+        lng: -122.4143109
       },
-      zoom: 10
+      zoom: 16
     })
     map.addListener('click', function(e) {
 	    placeMarker(e.latLng, map);
@@ -26,12 +28,25 @@ class Map extends Component {
 
   placeMarker(location, map){
   	console.log(location, map)
+
+  	let infoContent = '<p>test</p>'
+
+  	let infoWindow = new google.maps.InfoWindow({
+  		content: infoContent
+  	})
+
     let marker = new google.maps.Marker({
         position: location, 
-        map: map
-    });
-    map.panTo(location); 	
+        map: map,
+        title: 'test'
+    })
+    marker.addListener('click', function(){
+    	infoWindow.open(map, marker)
+    })
+    map.panTo(location) 	
   }
+
+
   render() {
     return (
       <div>
