@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
+import markers from './markers'
+
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  markers
 });
 
 export default rootReducer;
