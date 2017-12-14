@@ -3,7 +3,7 @@ v0.4:
 		- Add a functional map.
 		- Add a map pin.
 	- TODO:
-		- Add labels to map pins.
+		- Add infoboxes to map pins.
 v0.3: 
 	- Completed:
 		- Added react-router-dom and routes for both views.

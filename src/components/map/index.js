@@ -3,13 +3,19 @@ import React, { Component } from 'react';
 import styles from './styles.scss'
 
 class Map extends Component {
-  componentDidMount () {
-    this.state={
+  constructor(props){
+  	super(props);
+
+  	this.state={
     	markers:[]
     }
+  }
+
+  componentDidMount () {
     this.map();
     this.map = this.map.bind(this);
     this.placeMarker = this.placeMarker.bind(this);
+    this.renderLabel = this.renderLabel.bind(this);
   }
 
   map() {
@@ -29,7 +35,7 @@ class Map extends Component {
   placeMarker(location, map){
   	console.log(location, map)
 
-  	let infoContent = '<p>test</p>'
+  	let infoContent = 'TEST'
 
   	let infoWindow = new google.maps.InfoWindow({
   		content: infoContent
@@ -45,7 +51,6 @@ class Map extends Component {
     })
     map.panTo(location) 	
   }
-
 
   render() {
     return (
