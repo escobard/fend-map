@@ -47,6 +47,8 @@ class Map extends Component {
         map: map,
         title: 'test'
     })
+    console.log('MARKER LAT', marker.position.lat())
+    console.log('MARKER LAT', marker.position.lng())
     marker.addListener('click', function(){
     	infoWindow.open(map, marker)
     })
