@@ -61,12 +61,13 @@ class Map extends Component {
   }
 
   placeMarker(location, map){
-  	console.log(location)
     let {lat, lng} = location;
 
-    this.props.newMarker('TEST', lat(), lng()); 
+    let label = this.props.label;
+
+    this.props.newMarker(label, lat(), lng()); 
   	
-    let infoWindow = this.infoWindow('TEST')
+    let infoWindow = this.infoWindow(label)
 
     let marker = this.marker(location,map);
     let markerListener = this.infoListener(marker, infoWindow);
@@ -84,7 +85,6 @@ class Map extends Component {
   }
   
   render() {
-    console.log('PROPS', this.props)
     return (
       <div>
         <div id="map" style={{height: "500px", width: '100%'}}></div>
@@ -93,8 +93,8 @@ class Map extends Component {
   }
 }
 
-function mapStateToProps({markers}){
-  return{markers}
+function mapStateToProps({markers, label}){
+  return{markers, label}
 }
 
 export default connect(mapStateToProps, {newMarker})(Map);

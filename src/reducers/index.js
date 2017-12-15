@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
 import markers from './markers'
+import label from './label'
 
 const rootReducer = combineReducers({
-  markers
+  markers,
+  label
 });
 
 export default rootReducer;

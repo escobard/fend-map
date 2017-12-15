@@ -19,6 +19,7 @@ class Listing extends Component {
   render() {
     return (
       <main id="listing" className="container">
+        <h1>Marker list</h1>
         {this.renderListItems(this.props.markers)}
       </main>
     );

@@ -40,7 +40,7 @@ class Marker extends Component {
              name="new-marker" 
              type="text"/>
           </label>
-          <button type="submit" className="col-md-2">Clear</button>
+          <button type="submit" className="col-md-2">Submit</button>
         </form>
       </div>
     );
