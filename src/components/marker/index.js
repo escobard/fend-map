@@ -1,23 +1,52 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+
+import {addLabel} from '../../actions'
 
 import styles from './styles.scss'
 
-export default class Marker extends Component {
+class Marker extends Component {
   
+  constructor(props){
+    super(props);
+
+    this.state = { markerLabel: 'empty' }
+
+    this.inputChange = this.inputChange.bind(this)
+    this.submitLabel = this.submitLabel.bind(this)
+
+  }
+
+  submitLabel(event){
+    event.preventDefault();
+    this.props.addLabel(this.state.markerLabel)
+  }
+
+  inputChange(event){
+    this.setState({markerLabel: event.target.value})
+  }
   render() {
     return (
-      <header className="col-md-12 col-sm-12">
-      	<div className="col-md-3 col-sm-12 header-title">
-      		<Link to={'/'}>UdaciMap</Link>
-      	</div>
-      	<div className="col-md-9 col-sm-12 header-links">
-          <Link to={'/'}>Home</Link>
-          <Link to={'listing'}>Listing</Link>
-      		<a href="#github">About</a>
-      	</div>
-
-      </header>
+      <div id="marker-label">
+        <form onSubmit={this.submitLabel} className="input-group">
+          <label htmlFor="new-marker">
+            <input
+             placeholder="Enter your marker label"
+             value={this.state.markerLabel}
+             onChange={this.inputChange}
+             className="form-control"
+             name="new-marker" 
+             type="text"/>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     );
   }
 }
+function mapStateToProps({markers}){
+  return {markers}
+}
+
+export default connect(mapStateToProps, {addLabel})(Marker)

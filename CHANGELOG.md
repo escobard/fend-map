@@ -1,7 +1,14 @@
+v0.6:
+	- TODO:
+		- create the listings view
+		- create individual listing component
+
 v0.5:
-	TODO:
-		- set up redux reducers and actionss
+	- Completed:
+		- set up redux reducers and actions
 		- set up input and handlers for new markers
+		- set up base markers data
+		- set up base renderer for marker data
 
 v0.4: 
 	- Completed:
