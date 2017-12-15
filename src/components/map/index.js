@@ -18,6 +18,7 @@ class Map extends Component {
   componentDidMount () {
     this.map();
     this.map = this.map.bind(this);
+    console.log('PROPS', this.props)
 
   }
 
@@ -31,12 +32,14 @@ class Map extends Component {
       zoom: 16
     })
 
+    this.renderMarkers(this.props.markers, map);
+
     map.addListener('click', function(e) {
 	    placeMarker(e.latLng, map);
 	});
   }
 
-  marker(location, map, title){
+  marker(location, map){
     return new google.maps.Marker({
         position: location, 
         map: map,
@@ -48,9 +51,14 @@ class Map extends Component {
       content: infoContent
     })
   }
-  
+
+  infoListener(marker, infoWindow){
+    marker.addListener('click', function(){
+      infoWindow.open(map, marker)
+    })
+  }
   placeMarker(location, map){
-  	console.log(location, map)
+  	console.log(location)
 
   	let infoWindow = this.infoWindow('TEST')
 
@@ -58,15 +66,17 @@ class Map extends Component {
 
     console.log('MARKER LAT', marker.position.lat())
     console.log('MARKER LAT', marker.position.lng())
-    marker.addListener('click', function(){
-    	infoWindow.open(map, marker)
-    })
+    let markerListener = this.infoListener(marker, infoWindow);
     map.panTo(location) 	
   }
 
-  renderMarkers(markers){
+  renderMarkers(markers, map){
     markers.map((marker, index) =>{
-
+      let {title, latitude, longitude} = marker;
+      let location = {lat: latitude, lng: longitude};
+      let newMarker = this.marker(location, map)
+      let infoWindow = this.infoWindow(title)
+      let markerListener = this.infoListener(newMarker, infoWindow);
     })
   }
   render() {
