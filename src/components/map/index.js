@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+import {newMarker} from '../../actions'
+
 import styles from './styles.scss'
 
 class Map extends Component {
@@ -57,21 +59,22 @@ class Map extends Component {
       infoWindow.open(map, marker)
     })
   }
+
   placeMarker(location, map){
   	console.log(location)
+    let {lat, lng} = location;
 
-  	let infoWindow = this.infoWindow('TEST')
+    this.props.newMarker('TEST', lat(), lng()); 
+  	
+    let infoWindow = this.infoWindow('TEST')
 
     let marker = this.marker(location,map);
-
-    console.log('MARKER LAT', marker.position.lat())
-    console.log('MARKER LAT', marker.position.lng())
     let markerListener = this.infoListener(marker, infoWindow);
-    map.panTo(location) 	
+    map.panTo(location)	
   }
 
   renderMarkers(markers, map){
-    markers.map((marker, index) =>{
+    markers.map((marker, index) => {
       let {title, latitude, longitude} = marker;
       let location = {lat: latitude, lng: longitude};
       let newMarker = this.marker(location, map)
@@ -81,6 +84,7 @@ class Map extends Component {
   }
   
   render() {
+    console.log('PROPS', this.props)
     return (
       <div>
         <div id="map" style={{height: "500px", width: '100%'}}></div>
@@ -93,4 +97,4 @@ function mapStateToProps({markers}){
   return{markers}
 }
 
-export default connect(mapStateToProps)(Map);
+export default connect(mapStateToProps, {newMarker})(Map);

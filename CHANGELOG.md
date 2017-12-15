@@ -1,7 +1,10 @@
 v0.6:
-	- TODO:
+	- Completed:
 		- create the listings view
 		- create individual listing component
+		- create action / reducer for new marker - add marker to redux store
+	- TODO:
+		- create handler to set new label title with the correct label 
 
 v0.5:
 	- Completed:

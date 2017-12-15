@@ -8,9 +8,10 @@ const listItem = ({item}) =>{
 
     return (
     	<article>
-    		<h3>{title}</h3>
-    		<span>{longitude}</span>
-    		<span>{latitude}</span>
+    		<h3>Location Title: {title}</h3>
+    		<span>Longitude: {longitude}</span>
+    		<br/>
+    		<span>Latitude: {latitude}</span>
     	</article>
     );
 }

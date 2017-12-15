@@ -1,4 +1,4 @@
-import { ADD_LABEL } from '../actions/types';
+import { ADD_LABEL, NEW_MARKER } from '../actions/types';
 
 const init = [
 	{title:'Maritime Museum', latitude:37.80642725377191, longitude:-122.42391586303711},
@@ -11,6 +11,8 @@ const init = [
 
 export default function(state = init, action) {
   switch(action.type) {
+  case NEW_MARKER:
+  	return [action.payload, ...state]
   case ADD_LABEL:
     return [action.payload, ...state];
   default:
