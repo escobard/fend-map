@@ -11,15 +11,18 @@ class Marker extends Component {
   constructor(props){
     super(props);
 
-    this.state = { markerLabel: '' }
+    this.state = { markerLabel: 'empty' }
 
     this.inputChange = this.inputChange.bind(this)
     this.submitLabel = this.submitLabel.bind(this)
 
   }
 
-  submitLabel(){
+  submitLabel(event){
+    event.preventDefault();
     console.log('submitted', 'state:', this.state)
+    console.log('submitted', 'props:', this.props)
+    this.props.addLabel(this.state.markerLabel)
   }
 
   inputChange(event){
@@ -44,5 +47,8 @@ class Marker extends Component {
     );
   }
 }
+function mapStateToProps({markers}){
+  return {markers}
+}
 
-export default connect(null, {})(Marker)
+export default connect(mapStateToProps, {addLabel})(Marker)

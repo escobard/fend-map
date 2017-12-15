@@ -1,10 +1,11 @@
-import { ADD_LABEL } from '../actions';
+import { ADD_LABEL } from '../actions/types';
 
-export default function(state = {}, action) {
+const init = {}
+
+export default function(state = init, action) {
   switch(action.type) {
   case ADD_LABEL:
-  	// console.log('This is the about content JSON: ', action.payload.data);
-    return action.payload.data;
+    return [action.payload, ...state];
   default:
     return state;
   }
