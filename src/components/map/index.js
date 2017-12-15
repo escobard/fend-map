@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 import styles from './styles.scss'
 
@@ -10,6 +11,7 @@ class Map extends Component {
     	markers:[]
     }
 
+    this.map = this.map.bind(this);
     this.placeMarker = this.placeMarker.bind(this);
   }
 
@@ -28,25 +30,32 @@ class Map extends Component {
       },
       zoom: 16
     })
+
     map.addListener('click', function(e) {
 	    placeMarker(e.latLng, map);
 	});
   }
 
+  marker(location, map, title){
+    return new google.maps.Marker({
+        position: location, 
+        map: map,
+    })
+  }
+
+  infoWindow(infoContent){
+    return new google.maps.InfoWindow({
+      content: infoContent
+    })
+  }
+  
   placeMarker(location, map){
   	console.log(location, map)
 
-  	let infoContent = 'TEST'
+  	let infoWindow = this.infoWindow('TEST')
 
-  	let infoWindow = new google.maps.InfoWindow({
-  		content: infoContent
-  	})
+    let marker = this.marker(location,map);
 
-    let marker = new google.maps.Marker({
-        position: location, 
-        map: map,
-        title: 'test'
-    })
     console.log('MARKER LAT', marker.position.lat())
     console.log('MARKER LAT', marker.position.lng())
     marker.addListener('click', function(){
@@ -55,6 +64,11 @@ class Map extends Component {
     map.panTo(location) 	
   }
 
+  renderMarkers(markers){
+    markers.map((marker, index) =>{
+
+    })
+  }
   render() {
     return (
       <div>
@@ -64,4 +78,8 @@ class Map extends Component {
   }
 }
 
-export default Map;
+function mapStateToProps({markers}){
+  return{markers}
+}
+
+export default connect(mapStateToProps)(Map);

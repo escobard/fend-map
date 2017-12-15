@@ -20,8 +20,6 @@ class Marker extends Component {
 
   submitLabel(event){
     event.preventDefault();
-    console.log('submitted', 'state:', this.state)
-    console.log('submitted', 'props:', this.props)
     this.props.addLabel(this.state.markerLabel)
   }
 
