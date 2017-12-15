@@ -79,6 +79,7 @@ class Map extends Component {
       let markerListener = this.infoListener(newMarker, infoWindow);
     })
   }
+  
   render() {
     return (
       <div>
