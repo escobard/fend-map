@@ -3,6 +3,7 @@ v0.7:
 		- Add search filter handlers
 		- Add conditional handler to only allow marker addition after the input has been filled (or a solid UX solution)
 		- Responsive alignments
+		- Add streetview
 
 v0.6:
 	- Completed:
